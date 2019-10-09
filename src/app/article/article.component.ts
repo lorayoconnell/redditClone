@@ -6,7 +6,10 @@ import { Article } from './article.model';
   templateUrl: './article.component.html',
   styleUrls: ['./article.component.css']
 })
+
 export class ArticleComponent implements OnInit {
+
+  adm: boolean = false;
 
   @HostBinding('attr.class') cssClass='row';
   
@@ -25,6 +28,12 @@ export class ArticleComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (this.article.role == "admin") {
+      this.adm = true;
+    }
+    else {
+      this.adm = false;
+    }
   }
 
 }
