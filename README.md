@@ -1,5 +1,11 @@
 # RedditClone
 
+https://github.com/lorayoconnell/redditClone
+
+Completed requirements and extra credit flagArticle functionality
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.4.
 
 ## Development server

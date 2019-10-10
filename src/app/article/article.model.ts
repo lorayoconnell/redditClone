@@ -1,3 +1,4 @@
+
 export class Article {
     title: string;
     link: string;
@@ -16,8 +17,6 @@ export class Article {
         }
         else
             this.admin = false;
-
-        // console.log("article.model.ts -- this.title: " + this.title + " this.role: " + this.role + " this.admin: " + this.admin);
     }
 
     voteUp(): void {

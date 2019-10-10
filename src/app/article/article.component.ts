@@ -1,4 +1,5 @@
 import { Component, OnInit, HostBinding, Input } from '@angular/core';
+import { FlaggedArticleService } from '../flagged-article.service';
 import { Article } from './article.model';
 
 @Component({
@@ -15,7 +16,7 @@ export class ArticleComponent implements OnInit {
   
   @Input() article: Article;
 
-  constructor() { }
+  constructor(public flaggedArticleService : FlaggedArticleService) { }
 
   voteUp(): boolean {
     this.article.voteUp();
@@ -27,6 +28,11 @@ export class ArticleComponent implements OnInit {
     return false;
   }
 
+  flagArticle(): boolean {
+    this.flaggedArticleService.downvoteToBottom(this.article);
+    return false;
+  }
+
   ngOnInit() {
     if (this.article.role == "admin") {
       this.adm = true;
@@ -35,5 +41,10 @@ export class ArticleComponent implements OnInit {
       this.adm = false;
     }
   }
+
+
+
+
+
 
 }
